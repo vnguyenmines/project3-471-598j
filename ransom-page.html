@@ -1,23 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-    <link href="css/style.css" rel="stylesheet">
-    <script src="ransom.js"></script>
-  </head>
-  <body>
-    <input type="text" id="inputbox" value="" readonly>
-    <button type="button" onclick="deleteHandler()">X</button>  
-    <button type="button" onclick="numHandler(1)">1</button>  
-    <button type="button" onclick="numHandler(2)">2</button>  
-    <button type="button" onclick="numHandler(3)">3</button>  
-    <button type="button" onclick="numHandler(4)">4</button>  
-    <button type="button" onclick="numHandler(5)">5</button>  
-    <button type="button" onclick="numHandler(6)">6</button>  
-    <button type="button" onclick="numHandler(7)">7</button>  
-    <button type="button" onclick="numHandler(8)">8</button>  
-    <button type="button" onclick="numHandler(9)">9</button>  
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Oops, You have been Locked Out</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="ransom.js"></script>
+</head>
+<body>
+  <div class="frame">
+    <header class="topbar">
+      <div class="top-left">
+        <div class="lock-icon">🔒</div>
+        <h1>Oops, you have been locked out!</h1>
+      </div>
+      <div class="top-right small-text">Oops, You have been Locked Out</div>
+    </header>
+
+    <main class="content">
+      <section class="left-panel">
+        <div class="input-area">
+          <div id="display" class="display">8552</div>
+          <button class="clear-btn" id="clearBtn" aria-label="clear input">X</button>
+        </div>
+
+        <div class="numpad" role="application" aria-label="numeric keypad">
+          <button onclick="numHandler(1)">1</button>
+          <button onclick="numHandler(2)">2</button>
+          <button onclick="numHandler(3)">3</button>
+
+          <button onclick="numHandler(4)">4</button>
+          <button onclick="numHandler(5)">5</button>
+          <button onclick="numHandler(6)">6</button>
+
+          <button onclick="numHandler(7)">7</button>
+          <button onclick="numHandler(8)">8</button>
+          <button onclick="numHandler(9)">9</button>
+
+          <button class="zero" onclick="numHandler(0)">0</button>
+          <button class="enter" onclick="submitPin()">Enter</button>
+        </div>
+
+        <div class="hint">(This is a joke UI — nothing will actually charge your account.)</div>
+      </section>
+
+      <aside class="right-panel">
+        <div class="message-box">
+          <p class="big">You have been determined to be a low value customer. Are you gonna buy something or just keep browsing and wasting our precious computing resources?</p>
+
+          <p>To prove your loyalty to the site, you must enter your secret pin which you made when creating your account.</p>
+
+          <p>Failure to enter your pin within the allotted time frame will automatically charge your account with a random selection of products and delete your account shortly after.</p>
+
+          <div class="countdown-row">
+            <div class="countdown-label">Time left to comply:</div>
+            <div id="timer" class="timer">05:00</div>
+          </div>
+
+          <div id="status" class="status">Status: Waiting for input</div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <small>Bad Design Competition — parody only.</small>
+    </footer>
+  </div>
+</body>
 </html>
+
