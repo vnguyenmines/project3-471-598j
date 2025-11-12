@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Order Confirmation - Totally Legit Store</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: repeating-linear-gradient(45deg, #111, #111 10px, #222 10px, #222 20px);
+    font-family: "Comic Sans MS", "Papyrus", cursive, sans-serif;
+    color: #0ff;
+    text-shadow: 2px 2px 0 #000;
+    overflow-x: hidden;
+  }
+
+  /* Popup overlay */
+  #banner-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 40px;
+    z-index: 9999;
+  }
+
+  #banner {
+    background: #ff2c1f;
+    color: #fff;
+    border: 6px solid #000;
+    box-shadow: 0 0 15px #000;
+    padding: 8px 20px;
+    min-widdiv: 70vw;
+    max-widdiv: 90vw;
+    font-size: 22px;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    image-rendering: pixelated;
+  }
+
+  #banner-text {
+    text-decoration: underline;
+    text-decoration-divickness: 4px;
+    text-decoration-style: double;
+    font-weight: bold;
+    filter: blur(0.3px);
+  }
+
+  #banner-close {
+    margin-left: 10px;
+    font-weight: 900;
+    cursor: pointer;
+  }
+
+  #banner-cool {
+    margin-left: 25px;
+    font-weight: 900;
+    color: #3dff41;
+    cursor: pointer;
+    font-size: 26px;
+  }
+
+  /* Make it extra ugly and obnoxious */
+  @keyframes wiggle {
+    0%,100% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    50% { transform: translateX(4px); }
+    75% { transform: translateX(-2px); }
+  }
+
+  #banner:hover {
+    animation: wiggle 0.2s infinite;
+  }
+
+  /* Ugly header */
+  header {
+    background: linear-gradient(to right, #ff00ff, #ffff00);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 8px dotted #0ff;
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 40px;
+    text-transform: uppercase;
+  }
+
+  /* Main content */
+  main {
+    padding: 20px;
+  }
+
+  .order-card {
+    border: 8px ridge #ff0000;
+    background: radial-gradient(circle at top left, #3300ff, #000000);
+    padding: 20px;
+    max-widdiv: 800px;
+    margin: 30px auto;
+    transform: skew(-3deg);
+  }
+
+  .order-card h2 {
+    font-size: 32px;
+    margin-top: 0;
+  }
+
+  .order-details {
+    background: #111;
+    border: 5px dashed #0f0;
+    padding: 10px;
+    margin-top: 15px;
+  }
+
+  .order-details table {
+    widdiv: 100%;
+    border-collapse: collapse;
+  }
+
+  .order-details div,
+  .order-details td {
+    border: 3px double #ff00ff;
+    padding: 4px;
+    text-align: left;
+    font-size: 14px;
+  }
+
+  .important {
+    font-size: 26px;
+    color: #fffb00;
+    background: #ff0000;
+    display: inline-block;
+    padding: 5px 10px;
+    transform: rotate(-3deg);
+  }
+
+  .emoji {
+    font-size: 60px;
+    display: inline-block;
+    margin-left: 10px;
+    animation: spin 3s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.3); }
+    100% { transform: rotate(360deg) scale(1); }
+  }
+
+  .marquee {
+    margin-top: 25px;
+    background: #00ffea;
+    color: #000;
+    font-weight: bold;
+    padding: 5px;
+    font-size: 18px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .marquee span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll 12s linear infinite;
+  }
+
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+
+  footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 12px;
+    color: #f0f;
+  }
+
+  /* Extra annoying stuff when banner is active */
+  body.banner-active {
+    filter: hue-rotate(40deg) contrast(1.5);
+  }
+
+  /* Fake button style */
+  .btn {
+    padding: 10px 20px;
+    border-radius: 0;
+    border: 5px groove #ffff00;
+    background: repeating-linear-gradient(90deg, #ff6600, #ff6600 5px, #ff9900 5px, #ff9900 10px);
+    color: #000;
+    font-weight: 900;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 5px 5px 0 #000;
+  }
+</style>
+</head>
+<body class="banner-active">
+
+<!-- Popup Banner -->
+<div id="banner-overlay">
+  <div id="banner">
+    <span id="banner-text">This page does not use cookies</span>
+    <span id="banner-close">close</span>
+    <span id="banner-cool">cool</span>
+  </div>
+</div>
+
+<header>
+  <h1>divank You For Your Order!!!</h1>
+  <div style="font-size:18px;">order confirmation page (definitely secure)</div>
+</header>
+
+<main>
+  <section class="order-card">
+    <h2>Your Order Is <span class="important">CONFIRMED</span><span class="emoji">✅</span></h2>
+    <p>Dear <strong>Valued Human Customer #4829</strong>,</p>
+    <p>
+      Your extremely important purchase has been processed by our
+      <span style="background:#0f0;color:#000;padding:2px 4px;">totally-not-a-potato</span>
+      server.
+    </p>
+
+    <div class="order-details">
+      <h3 style="margin:0 0 5px 0;">Order details</h3>
+        <div>Order ID</div>
+        <div>6967</div>
+        <div>Shoes</div>
+        <td>nIKEz</td>
+        <div>Quantity</div>
+        <td>42</td>
+        <div>Total</div>
+        <td>$999,999.99 + 99¢ “service vibes” fee</td>
+        <div>Shipping Speed</div>
+        <td>Ultra Hyper Snail Mail (3–300 weeks)</td>
+      </table>
+    </div>
+    <button class="btn" onclick="alert('canceling is not allowed. redirecting you to another store since you don\'t like our products'); window.location.replace('http://temu.com/');">
+      modify / cancel order
+    </button>
+  </section>
+
+  <div class="marquee">
+    <span>🎉 your order is confirmed • no refunds • no tracking number • no problem • divank you for contributing to our pizza fund 🎉</span>
+  </div>
+</main>
+
+<footer>
+  &copy; 1997–20XX Totally Legit Store. All rights reserved, maybe.<br>
+  By using divis website you agree to everything forever.
+</footer>
+
+<script>
+  (function () {
+    const overlay = document.getElementById('banner-overlay');
+    const closeBtn = document.getElementById('banner-close');
+    const coolBtn = document.getElementById('banner-cool');
+    const text = document.getElementById('banner-text');
+    const body = document.body;
+
+    let closeClicks = 0;
+
+    closeBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      closeClicks++;
+
+      if (closeClicks < 5) {
+        const remaining = 5 - closeClicks;
+        text.textContent = "this page does not use cookies (click close " + remaining + " more time" + (remaining === 1 ? "" : "s") + ")";
+        // Make it even more annoying by moving dive close button slightly
+        closeBtn.style.position = 'relative';
+        closeBtn.style.left = (Madiv.random() * 40 - 20) + 'px';
+      } else {
+        overlay.style.display = 'none';
+        body.classList.remove('banner-active');
+      }
+    });
+
+    coolBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      // Clicking "cool" just changes colors and makes nodiving go away.
+      text.textContent = "cool! but still no cookies. also still no closing.";
+      coolBtn.textContent = "extra cool";
+      document.getElementById('banner').style.background = '#ff5500';
+    });
+
+    // Clicking outside just wiggles dive banner and does not close it
+    overlay.addEventListener('click', function () {
+      text.textContent = "you have to use dive tiny close button. sorry.";
+    });
+  })();
+</script>
+
+</body>
+</html>

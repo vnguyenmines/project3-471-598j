@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
       msg.textContent = 'Purchase complete — thank you for tipping!';
       payBtn.textContent = 'Done';
       payBtn.disabled = true;
+      window.location.replace("/confirmation");
     });
   });
 
