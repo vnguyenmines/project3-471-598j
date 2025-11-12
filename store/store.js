@@ -1,5 +1,11 @@
 async function main() {
-  // Read JSON
+  let buyButtons = document.getElementsByClassName("ransom")  // Read JSON
+  for (let i = 0; i < buyButtons.length; i++) {
+    buyButtons[i].addEventListener("click", () => {
+      window.location.replace("/ransom");
+    })
+  }
+
   let data = await fetch("../data.json").then((res) => {
     return res.json();
   });

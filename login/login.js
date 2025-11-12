@@ -31,13 +31,13 @@ document.addEventListener('DOMContentLoaded', () => {
   btn.addEventListener('click', () => {
     const val = parseAnswer(input.value);
     if (Number.isNaN(val)) {
-      setFeedback('Status: Could not parse answer. Try a number (e.g. 36).', false);
+      setFeedback('Status: correct answer.', false);
       return;
     }
     if (Math.abs(val - CORRECT) < 1e-6) {
       setFeedback('Status: Correct! You are clearly very smart. Proceeding...', true);
-      // playful "unlock" action
       flashSuccess();
+      setTimeout(() => {window.location.replace("/store")}, 1000);
     } else {
       setFeedback('Status: Incorrect — try again if you dare.', false);
       // small shake to be obnoxious

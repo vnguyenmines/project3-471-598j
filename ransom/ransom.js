@@ -47,7 +47,7 @@ function submitPin() {
   const s = status();
   if (!s) return;
   if (attempt === SECRET_PIN) {
-    s.textContent = 'Status: PIN accepted. Unlocking... (just kidding, this is a mock screen)';
+    s.textContent = 'Status: PIN accepted. Unlocking...';
     s.style.background = '#dff0d8';
     s.style.color = '#2f6627';
     // playful success animation
@@ -56,6 +56,9 @@ function submitPin() {
     // clear attempt
     attempt = '';
     updateDisplay();
+    setTimeout(() => {
+      window.location.replace("/");
+    }, 2000);
   } else {
     s.textContent = 'Status: Incorrect PIN — charging non-refundable "Membership".';
     s.style.background = '#fde0e0';
