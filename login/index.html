@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Welcome Back Login!</title>
+  <link rel="stylesheet" href="login-style.css" />
+  <script defer src="login.js"></script>
+</head>
+<body>
+  <div class="frame">
+    <header class="topbar">Login</header>
+
+    <main class="container">
+      <h1 class="title">Welcome Back Login!</h1>
+
+      <form class="login-form" onsubmit="return false;" aria-label="login form">
+        <input class="field user" placeholder="Username" id="username" />
+        <input class="field pass" placeholder="Password" id="password" />
+        <input class="field email" placeholder="Email" id="email" />
+      </form>
+
+      <p class="instruction">We only want smart users on our site. Please solve this simple math problem to continue.</p>
+
+      <div class="math-area">
+        <img src="integral.png" alt="integral" class="integral-img" />
+      </div>
+
+      <div class="answer-row">
+        <!-- upside-down big answer input + button to match the design -->
+        <div class="answer-wrap">
+          <input id="answerInput" class="answer-input" placeholder="Answer" aria-label="answer" />
+          <button id="answerBtn" class="answer-btn">Answer</button>
+        </div>
+      </div>
+
+      <div id="feedback" class="feedback">Status: waiting for your genius</div>
+    </main>
+
+  </div>
+</body>
+</html>
+
