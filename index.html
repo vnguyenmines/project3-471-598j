@@ -1,13 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-    <link href="css/style.css" rel="stylesheet">
-  </head>
-  <body>
-  
-    <a href="/ransom">ransom page</a>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your connection is not private — Mock</title>
+  <style>
+    :root{
+      --bg:#202124; /* Chrome-ish dark */
+      --text:#e8eaed;
+      --muted:#bdc1c6;
+      --danger:#ea4335; /* Google red */
+      --button:#3c4043;
+      --button-hover:#4b4f52;
+      --primary:#8ab4f8;
+      --card:#2b2c2f;
+      --divider:#3c4043;
+      --focus:#99c1ff;
+      --radius:12px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font:16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      display:grid;
+      place-items:center;
+    }
+    .wrap{
+      width:min(720px, 92vw);
+      padding:48px 32px 40px;
+    }
+    .icon{margin-bottom:18px}
+    .icon svg{display:block; width:54px; height:54px}
+
+    h1{
+      font-weight:600; font-size:32px; margin:0 0 8px;
+      letter-spacing:.2px;
+    }
+    p{margin:0 0 22px; color:var(--muted)}
+
+    .host{color:var(--text); font-weight:600}
+    .learn a{color:var(--primary); text-decoration:none}
+    .learn a:hover{ text-decoration:underline }
+
+    .error{margin:14px 0 28px; color:#9aa0a6; font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+
+    .actions{display:flex; gap:14px; align-items:center}
+
+    .btn{
+      cursor:pointer; user-select:none; 
+      transition:background .15s ease, border-color .15s ease, transform .05s ease;
+      text-decoration:none; font-weight:500;
+    }
+    .btn:hover{  }
+    .btn:focus{ outline:2px solid var(--focus); outline-offset:2px }
+
+    .btn.primary{
+      background:#1a73e8; border-color:#1a73e8;
+    }
+    .btn.primary:hover{ filter:brightness(1.05) }
+
+    /* Optional small print section */
+    .disclosure{margin-top:26px; padding-top:18px; border-top:1px solid var(--divider); color:#9aa0a6; font-size:14px}
+
+    #continue-btn {
+      font-size: 10px;
+    }
+
+  </style>
+  <script>
+  </script>
+</head>
+<body>
+  <main class="wrap" role="main" aria-labelledby="title">
+    <div class="icon" aria-hidden="true">
+      <!-- Warning triangle -->
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10.29 3.86a2 2 0 0 1 3.42 0l8.2 13.76A2 2 0 0 1 20.2 21H3.8a2 2 0 0 1-1.71-3.38l8.2-13.76Z" fill="var(--danger)"/>
+        <rect x="11" y="8" width="2" height="7" rx="1" fill="#fff"/>
+        <rect x="11" y="16.5" width="2" height="2" rx="1" fill="#fff"/>
+      </svg>
+    </div>
+
+    <h1 id="title">Your connection is not private</h1>
+    <p>
+      Attackers might be trying to steal your information from <span class="host">temu.com</span>
+      (for example, passwords, messages, or credit cards). <span class="learn"><a href="https://youtube.com/shorts/3oolENDA_CQ?si=wDDRJZM4KyOu9giv">Learn more</a></span>
+    </p>
+
+    <div class="error">NET::ERR_CERT_DATE_INVALID</div>
+
+    <div class="actions">
+      <a id="continue-btn" class="btn" href="/login">Advanced</a>
+      <a  class="btn primary" >Back to safety</a>
+    </div>
+  </main>
+</body>
 </html>
