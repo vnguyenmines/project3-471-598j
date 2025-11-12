@@ -1,0 +1,14 @@
+{
+  "products": [
+    {
+      "name": "",
+      "logo": "https://media.about.nike.com/image-downloads/cf68f541-fc92-4373-91cb-086ae0fe2f88/002-nike-logos-swoosh-white.jpg",
+      "url": "https://static.nike.com/a/images/t_web_pw_592_v2/f_auto/u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/817f6632-d259-42d2-a623-1eca8aa594f2/AIR+JORDAN+12+RETRO.png"
+    }
+  ],
+  "ads": [
+    "/public/car1.png",
+    "/public/fragrance1.png",
+    "/public/ziploc.png"
+  ]
+}
