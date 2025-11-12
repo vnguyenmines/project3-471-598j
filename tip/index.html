@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Cart — Consider Tipping</title>
+  <link rel="stylesheet" href="tip-style.css" />
+  <script defer src="tip.js"></script>
+</head>
+<body>
+  <div class="frame">
+    <header class="topbar">
+      <h1>Your Cart</h1>
+    </header>
+
+    <main class="content">
+      <section class="left-col">
+        <ul class="cart-list" role="list">
+          <li><span class="avatar"></span><span class="item">Item 1</span></li>
+          <li><span class="avatar"></span><span class="item">Item 2</span></li>
+          <li><span class="avatar"></span><span class="item">Item 3</span></li>
+          <li><span class="avatar"></span><span class="item">Item 4</span></li>
+        </ul>
+      </section>
+
+      <section class="middle-col">
+        <!-- Replace these maps/URLs with actual images if desired -->
+        <div class="image-stack">
+          <img src="southpark.png" alt="collage-1" class="img top" />
+          <img src="peter.png" alt="collage-2" class="img main" />
+        </div>
+
+        <p class="pitch">
+          Consider tipping. Every little bit helps — even a dollar can make a difference.
+          Your tip helps cover operating costs, supports small causes, and keeps our service running.
+          Please choose a tip to complete your purchase.
+        </p>
+      </section>
+
+      <aside class="right-col">
+        <div class="tip-area">
+          <div class="label">Select a tip to complete your purchase.</div>
+
+          <div class="tip-buttons" role="radiogroup" aria-label="tip options">
+            <button class="tip-btn" data-percent="18">18%</button>
+            <button class="tip-btn" data-percent="20">20%</button>
+            <button class="tip-btn" data-percent="22">22%</button>
+          </div>
+
+          <div class="checkout">
+            <div class="total-line">
+              <span>Cart total:</span>
+              <strong id="subtotal">$24.00</strong>
+            </div>
+            <div class="total-line">
+              <span>Tip:</span>
+              <strong id="tipAmt">$0.00</strong>
+            </div>
+            <div class="total-line grand">
+              <span>Amount due:</span>
+              <strong id="grandTotal">$24.00</strong>
+            </div>
+
+            <button id="payBtn" class="pay-btn" disabled>Complete Purchase</button>
+            <div id="msg" class="msg">Status: Waiting for tip selection</div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="footer">
+    </footer>
+  </div>
+</body>
+</html>
+
